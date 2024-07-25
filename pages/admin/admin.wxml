@@ -1,0 +1,5 @@
+<view class="container">
+  <text>管理页面内容</text>
+  <button bindtap="scanQRCode">扫描二维码</button>
+  <text wx:if="{{qrCodeResult}}">扫描结果: {{qrCodeResult}}</text>
+</view>

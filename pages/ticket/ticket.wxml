@@ -1,0 +1,10 @@
+<view class="container">
+  <!-- 标题 -->
+  <view class="title">近期活动</view>
+
+  <!-- 图片按钮和购票按钮 -->
+  <view class="button-container">
+    <image class="image-button" src="/image/B站横幅.jpg" bindtap="goToTicketDetail"></image>
+    <button class="ticket-button" bindtap="goToTicketDetail">购票</button>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<!-- postDetail.wxml -->
+<view class="container">
+  <!-- 作者及关注栏 -->
+  <view class="author-section">
+    <view class="author-info">
+      <text class="author-name">{{post.author}}</text>
+      <button class="follow-button {{post.followed ? 'followed' : ''}}" bindtap="onFollow">{{post.followed ? '已关注' : '关注'}}</button>
+    </view>
+  </view>
+
+  <!-- 标题及点赞栏 -->
+  <view class="title-section">
+    <view class="title-header">
+      <text class="post-title">{{post.title}}</text>
+      <button class="like-button {{post.liked ? 'liked' : ''}}" bindtap="onLike">{{post.likes}} ❤️</button>
+    </view>
+  </view>
+
+  <!-- 图片区域 -->
+  <view class="image-section">
+    <block wx:for="{{post.images}}" wx:key="index">
+      <image src="{{item}}" mode="aspectFill" class="post-image"></image>
+    </block>
+  </view>
+
+  <!-- 内容区域 -->
+  <view class="content-section">
+    <text class="post-content">{{post.content}}</text>
+  </view>
+</view>

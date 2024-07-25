@@ -1,0 +1,16 @@
+<view class="container"  style="width: 750rpx; height: 743rpx; display: flex; box-sizing: border-box; position: relative; left: 0rpx; top: -152rpx">
+  <swiper
+    class="swiper"
+    indicator-dots="{{true}}"   
+    autoplay="{{true}}"         
+    interval="{{3000}}"         
+    duration="{{500}}"          
+    circular="{{true}}"         
+  >
+    <block wx:for="{{images}}" wx:key="*this">
+      <swiper-item>
+        <image class="image" src="{{item}}" style="width: 691rpx; height: 343rpx; display: inline-block; box-sizing: border-box; position: relative; left: 30rpx; top: 0rpx"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

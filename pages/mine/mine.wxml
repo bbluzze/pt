@@ -1,0 +1,7 @@
+<!-- pages/index/index.wxml -->
+
+<view class="container">
+  <image class="avatar" src="{{ avatarUrl }}"></image>
+  <view class="name">{{ userName }}</view>
+  <button class="login-btn" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">微信登录</button>
+</view>

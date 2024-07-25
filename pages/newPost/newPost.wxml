@@ -1,0 +1,33 @@
+<!-- pages/newPost/newPost.wxml -->
+<view class="container">
+  <!-- 自定义导航栏 -->
+  <view class="header" style="width: 706rpx; height: 122rpx; display: flex; box-sizing: border-box">
+    <image src="/image/back_icon.png" class="back-icon" bindtap="onBack"></image>
+    <text class="header-title">发帖</text>
+  </view>
+
+  <!-- 内容输入区域 -->
+  <view class="content" style="width: 618rpx; height: 824rpx; display: flex; box-sizing: border-box; position: relative; left: 0rpx; top: 60rpx">
+    <!-- 标题输入框 -->
+    <input style="position: relative; left: 4rpx; top: 6rpx; width: 577rpx; height: 79rpx; display: block; box-sizing: border-box" type="text" placeholder="填写标题" class="title-input" bindinput="onTitleInput"/>
+
+    <!-- 内容输入框 -->
+    <textarea placeholder="填写内容" class="content-input" bindinput="onContentInput" style="width: 574rpx; height: 247rpx; display: block; box-sizing: border-box; left: 6rpx; top: 85rpx; position: relative"></textarea>
+    
+    <!-- 图片预览区域 -->
+    <view class="image-preview" style="width: 570rpx; height: 247rpx; display: flex; box-sizing: border-box; position: relative; left: 8rpx; top: 66rpx">
+      <block wx:for="{{images}}" wx:key="index">
+        <image src="{{item}}" class="preview-image"></image>
+      </block>
+    </view>
+    
+    <!-- 上传图片按钮 -->
+    <image src="/image/upload_icon.png" class="upload-icon" bindtap="onUploadImage" style="position: relative; left: 4rpx; top: -566rpx; width: 60rpx; height: 75rpx; display: block; box-sizing: border-box"></image>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="footer" style="width: 487rpx; height: 122rpx; display: flex; box-sizing: border-box; position: relative; left: 0rpx; top: 60rpx">
+    <button class="delete-button" bindtap="onDeletePost" style="position: relative; left: -49rpx; top: 191rpx; width: 187rpx; height: 83rpx; display: block; box-sizing: border-box">删除</button>
+    <button class="publish-button" bindtap="onPublishPost" style="position: relative; left: 52rpx; top: 192rpx">发布</button>
+  </view>
+</view>

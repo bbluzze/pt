@@ -1,0 +1,30 @@
+<!-- pages/search/search.wxml -->
+<view class="container" style="width: 750rpx; height: 519rpx; display: flex; box-sizing: border-box">
+  <!-- 搜索框 -->
+  <view class="search-bar" style="position: relative; left: 0rpx; top: -156rpx">
+    <input style="position: relative; left: 0rpx; top: 0rpx; width: 594rpx; height: 53rpx; display: block; box-sizing: border-box" class="search-input" type="text" placeholder="搜索" bindinput="onSearchInput" />
+  </view>
+
+  <!-- 搜索结果 -->
+  <scroll-view scroll-y="true" class="content" style="position: relative; left: 0rpx; top: -156rpx">
+    <view class="card-container">
+      <block wx:for="{{filteredPosts}}" wx:key="id">
+        <view class="card">
+          <image class="card-image" src="{{item.image}}" mode="aspectFill"></image>
+          <view class="card-content">
+            <text class="card-title">{{item.title}}</text>
+            <text class="card-description">{{item.description}}</text>
+            <view class="card-footer">
+              <image class="avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+              <text class="author">{{item.author}}</text>
+              <view class="likes" bindtap="onLikePost" data-id="{{item.id}}">
+                <image class="like-icon" src="{{item.liked ? '/image/red_heart.png' : '/image/gray_heart.png'}}" mode="aspectFill"></image>
+                <text>{{item.likes}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

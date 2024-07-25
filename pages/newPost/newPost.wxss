@@ -1,0 +1,101 @@
+/* pages/newPost/newPost.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+.back-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 0rpx; /* 调整返回图标与屏幕左侧的距离 */
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 20rpx;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-input {
+  width: 100%;
+  padding: 20rpx;
+  font-size: 18rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.content-input {
+  flex: 1;
+  min-height: 300rpx;
+  padding: 20rpx;
+  font-size: 18rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.image-preview {
+  display: flex;
+  overflow-x: auto; /* 横向滚动 */
+  padding: 10rpx 0;
+}
+
+.preview-image {
+  width: 200rpx; /* 图片预览宽度 */
+  height: auto;
+  margin-right: 10rpx;
+  border-radius: 10rpx;
+}
+
+.upload-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 -1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+.delete-button, .publish-button {
+  flex: 1; /* 确保按钮宽度铺满屏幕 */
+  padding: 20rpx;
+  font-size: 18rpx;
+  border: none;
+  border-radius: 10rpx;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+.publish-button {
+  background-color: #4caf50;
+  color: #fff;
+}

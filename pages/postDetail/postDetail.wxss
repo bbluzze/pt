@@ -1,0 +1,79 @@
+/* postDetail.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.author-section {
+  margin-bottom: 20rpx;
+}
+
+.author-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.follow-button {
+  padding: 5rpx 10rpx;
+  font-size: 20rpx;
+  background-color: #1e90ff; /* 蓝色 */
+  color: #fff;
+  border: none;
+  border-radius: 5rpx;
+}
+
+.follow-button.followed {
+  background-color: #ccc; /* 灰色 */
+}
+
+.title-section {
+  margin-bottom: 20rpx;
+}
+
+.title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-title {
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.like-button {
+  padding: 5rpx 10rpx;
+  font-size: 20rpx;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.like-button.liked {
+  color: #ff0000; /* 点赞后的颜色 */
+}
+
+.image-section {
+  margin-bottom: 20rpx;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10rpx;
+}
+
+.content-section {
+  margin-top: 20rpx;
+}
+
+.post-content {
+  font-size: 16rpx;
+  line-height: 1.8;
+  color: #333;
+}

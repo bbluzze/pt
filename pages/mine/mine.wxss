@@ -1,0 +1,28 @@
+/* pages/index/index.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 根据需要调整 */
+}
+
+.avatar {
+  width: 120rpx; /* 调整头像大小 */
+  height: 120rpx; /* 调整头像大小 */
+  border-radius: 50%; /* 确保头像显示为圆形 */
+}
+
+.name {
+  margin-top: 20rpx; /* 调整间距 */
+  font-size: 16px; /* 调整字体大小 */
+}
+
+.login-btn {
+  margin-top: 40rpx; /* 调整间距 */
+  background-color: #07c160; /* 调整按钮颜色 */
+  color: #fff; /* 调整文本颜色 */
+  border-radius: 4px;
+  padding: 10rpx 20rpx; /* 调整内边距 */
+}

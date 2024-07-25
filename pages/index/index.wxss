@@ -1,0 +1,17 @@
+/* index.wxss */
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 图片填充方式，保持宽高比并将图片放置在容器内 */
+}

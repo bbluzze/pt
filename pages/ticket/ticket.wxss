@@ -1,0 +1,22 @@
+.container {
+  padding: 20px;
+}
+
+.image-button {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ticket-button {
+  width: 100px;
+  height: 40px;
+  background-color: #007AFF;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}

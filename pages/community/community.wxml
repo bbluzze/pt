@@ -1,0 +1,51 @@
+<!-- pages/discover/discover.wxml -->
+<view class="container">
+  <!-- 标签页切换 -->
+  <view class="navbar">
+    <block wx:for="{{tabs}}" wx:key="key">
+      <view class="navbar-item {{item.active ? 'active' : ''}}" bindtap="switchTab" data-tab="{{item.key}}">
+        {{item.text}}
+      </view>
+    </block>
+  </view>
+
+  <!-- 主要内容区域 -->
+  <view class="content">
+    <!-- 关注列表 -->
+    <view wx:if="{{activeTab === 'follow'}}">
+      <block wx:for="{{followList}}" wx:key="id">
+        <view class="follow-item">
+          <text class="follow-name">{{item.author}}</text>
+          <button class="follow-button {{item.followed ? 'followed' : ''}}" data-id="{{item.id}}" bindtap="toggleFollow">
+            {{item.followed ? '已关注' : '关注'}}
+          </button>
+        </view>
+      </block>
+    </view>
+
+    <!-- 发现帖子列表 -->
+    <scroll-view scroll-x="true" class="posts-scroll-view">
+      <block wx:for="{{posts}}" wx:key="id">
+        <view class="card" data-id="{{item.id}}" bindtap="onCardTap">
+          <image src="{{item.image}}" class="card-image"></image>
+          <view class="card-content">
+            <text class="card-title">{{item.title}}</text>
+            <text class="card-description">{{item.description}}</text>
+            <view class="card-footer">
+              <image src="{{item.avatar}}" class="avatar"></image>
+              <text class="author">{{item.author}}</text>
+              <button class="like-button {{item.liked ? 'liked' : ''}}" data-id="{{item.id}}" bindtap="onLikePost">
+                {{item.likes}} ❤️
+              </button>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 添加帖子按钮 -->
+  <button class="add-post-button" bindtap="onAddPost">
+    <image src="/images/add_icon.png" class="add-icon"></image>
+  </button>
+</view>

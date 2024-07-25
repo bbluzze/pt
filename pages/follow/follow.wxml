@@ -1,0 +1,13 @@
+<!-- pages/follow/follow.wxml -->
+<view class="container">
+  <view class="follow-list">
+    <block wx:for="{{followList}}" wx:key="id">
+      <view class="follow-item">
+        <text class="name">{{item.name}}</text>
+        <button class="follow-button" data-id="{{item.id}}" bindtap="toggleFollow">
+          {{item.followed ? '已关注' : '+ 关注'}}
+        </button>
+      </view>
+    </block>
+  </view>
+</view>

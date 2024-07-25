@@ -1,0 +1,4 @@
+<view class="container">
+  <text style="width: 194rpx; height: 49rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 60rpx">买票用户ID: {{userId}}</text>
+  <button bindtap="confirmVerification" style="position: relative; left: 0rpx; top: 349rpx; width: 403rpx; height: 70rpx; display: block; box-sizing: border-box">确认核销</button>
+</view>
