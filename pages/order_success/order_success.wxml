@@ -1,0 +1,7 @@
+<view class="container">
+  <text class="title">购票成功！</text>
+  <!-- 显示二维码 -->
+  <image class="qr-code" src="{{qrCodeUrl}}" mode="aspectFit" binderror="onImageError"></image>
+  <text class="description">请保存此二维码，入场时需出示。</text>
+  <button bindtap="goToHomePage">返回首页</button>
+</view>

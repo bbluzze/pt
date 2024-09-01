@@ -2,9 +2,40 @@
   <!-- 标题 -->
   <view class="title">近期活动</view>
 
-  <!-- 图片按钮和购票按钮 -->
-  <view class="button-container">
-    <image class="image-button" src="/image/B站横幅.jpg" bindtap="goToTicketDetail"></image>
-    <button class="ticket-button" bindtap="goToTicketDetail">购票</button>
+  <!-- 菜单按钮 -->
+  <view class="menu-button" bindtap="togglePopupMenu">菜单</view>
+
+  <!-- 票务列表 -->
+  <view class="ticket-list">
+    <block wx:for="{{tickets}}" wx:key="id">
+      <view class="ticket-item">
+        <image class="image-button" src="{{item.image}}" bindtap="goToTicketDetail" data-id="{{item._id}}"></image>
+        <view class="ticket-info">
+          <text>{{item.description}}</text>
+          <button class="ticket-button" bindtap="goToOrderConfirm" data-id="{{item._id}}">购票</button>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 悬浮窗 -->
+  <view wx:if="{{showPopup}}" class="popup-overlay" bindtap="closePopupMenu">
+    <view class="popup-menu" catchtap="stopPropagation">
+      <block wx:if="{{role === 'normal'}}">
+        <view bindtap="goToFreeTravel">自由行申请</view>
+        <view bindtap="goToPhotoBooking">摄影预约</view>
+      </block>
+      <block wx:if="{{role === 'admin'}}">
+        <view bindtap="goToFreeTravel">自由行申请</view>
+        <view bindtap="goToPhotoBooking">摄影预约</view>
+        <view bindtap="goToVerification">验票</view>
+      </block>
+      <block wx:if="{{role === 'superadmin'}}">
+        <view bindtap="goToFreeTravel">自由行申请</view>
+        <view bindtap="goToPhotoBooking">摄影预约</view>
+        <view bindtap="goToVerification">验票</view>
+        <view bindtap="goToBackend">后台</view>
+      </block>
+    </view>
   </view>
 </view>

@@ -12,7 +12,11 @@
     "pages/admin/admin",
     "pages/verification/verification",
     "pages/backend/backend",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/order_confirm/order_confirm",
+    "pages/order_success/order_success",
+    "pages/travel_application/travel_application",
+    "pages/photography_booking/photography_booking"
   ],
   "tabBar": {
     "list": [
@@ -32,8 +36,6 @@
         "pagePath": "pages/mine/mine",
         "text": "我的"
       }
-      
-      
     ]
   },
   "window": {

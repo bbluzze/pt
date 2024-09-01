@@ -2,16 +2,13 @@
   padding: 20px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
+.ticket-info {
+  margin-bottom: 20px;
 }
 
 .title {
-  flex: 1;
   font-size: 20px;
   font-weight: bold;
-  text-align: center;
 }
 
 .ticket-image {
@@ -20,12 +17,12 @@
   margin: 20px 0;
 }
 
-.ticket-description {
+.description {
   font-size: 16px;
   margin-bottom: 20px;
 }
 
-.purchase-button {
+.confirm-button {
   width: 100px;
   height: 40px;
   background-color: #007AFF;

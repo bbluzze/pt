@@ -1,2 +1,9 @@
-<!--pages/ticket_detail/ticket_detail.wxml-->
-<text>pages/ticket_detail/ticket_detail.wxml</text>
+<view class="container">
+  <view class="header">
+    <button bindtap="goBack">返回</button>
+    <text class="title">{{ticket.title}}</text>
+  </view>
+  <image class="ticket-image" src="{{ticket.image}}"></image>
+  <view class="ticket-description">{{ticket.description}}</view>
+  <button class="purchase-button" bindtap="goToOrderConfirm" data-id="{{ticket._id}}">购票</button>
+</view>

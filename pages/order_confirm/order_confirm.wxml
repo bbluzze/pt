@@ -1,0 +1,7 @@
+<view class="container">
+  <text class="title">确认订单</text>
+  <text class="ticket-title">{{ticket.title}}</text>
+  <text class="ticket-price">价格: ¥{{ticket.price}}</text>
+  <!-- 用户点击确认购票按钮 -->
+  <button class="confirm-button" bindtap="submitOrder">确认购票</button>
+</view>
