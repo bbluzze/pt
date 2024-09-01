@@ -42,4 +42,5 @@
 
 .popup-menu view:last-child {
   border-bottom: none;
+  
 }

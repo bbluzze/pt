@@ -1,6 +1,6 @@
 <view class="container">
   <!-- 标题 -->
-  <view class="title">近期活动</view>
+  <view class="title">近期  活动</view>
 
   <!-- 菜单按钮 -->
   <view class="menu-button" bindtap="togglePopupMenu">菜单</view>
