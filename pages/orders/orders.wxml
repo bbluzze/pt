@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="order-list">
+    <block wx:for="{{orders}}" wx:key="index">
+      <view class="order-item">
+        <image class="session-image" src="{{item.sessionImage}}" />
+        <view class="details">
+          <text class="title">{{item.title}}</text>
+          <view class="info-row">
+            <text class="location">地点：{{item.location}}</text>
+            <text class="price">价格：¥{{item.price}}</text>
+          </view>
+          <text class="status">{{item.status}}</text>
+        </view>
+      </view>
+      <view class="divider"></view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+.container {
+  padding: 20px;
+}
+
+.order-list {
+  width: 100%;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.session-image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.details {
+  flex: 1;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.location, .price {
+  color: #666;
+}
+
+.status {
+  margin-top: 5px;
+  color: #ff0000;
+}
+
+.divider {
+  height: 1rpx;
+  background-color: #e5e5e5;
+  width: 100%;
+}

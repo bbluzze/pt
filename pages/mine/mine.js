@@ -1,69 +1,104 @@
 Page({
   data: {
-    avatarUrl: '/image/logo.png' // 默认头像
-  },
-
-  onGetUserInfo(e) {
-    const userInfo = e.detail.userInfo;
-    if (userInfo) {
-      this.setData({
-        avatarUrl: userInfo.avatarUrl
-      });
-      this.saveUserInfo(userInfo);
+    user: {
+      avatar: '/image/logo.png', // 默认头像路径
+      nickname: '点击登录', // 默认昵称
+      id: '000000000' // 初始化为空，等待从后端获取
     }
   },
-
-  saveUserInfo(userInfo) {
-    wx.cloud.init({
-      env: 'cloud1-5g5a92k95bac218d'
-    });
-
-    const db = wx.cloud.database();
-    const usersCollection = db.collection('users');
-
-    wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        const openid = res.result.openid;
-        usersCollection.where({
-          _openid: openid
-        }).get().then(result => {
-          if (result.data.length === 0) {
-            usersCollection.add({
-              data: {
-                avatarUrl: userInfo.avatarUrl,
-                nickName: userInfo.nickName,
-                gender: userInfo.gender,
-                province: userInfo.province,
-                city: userInfo.city,
-                country: userInfo.country
-              }
-            }).then(res => {
-              wx.showToast({
-                title: '登录成功',
-                icon: 'success'
+  onLoad: function() {
+    // 调用方法获取用户信息
+    this.getUserInfo();
+  },
+  getUserInfo: function() {
+    let that = this;
+    // 调用微信API获取用户信息
+    wx.getUserProfile({
+      desc: '用于完善会员资料',
+      success: (res) => {
+        // 假设我们有一个后端API可以根据微信用户信息查找或创建用户记录
+        wx.request({
+          url: 'https://your-backend-api.com/api/user', // 你的后端API地址
+          method: 'POST',
+          data: {
+            avatarUrl: res.avatarUrl,
+            nickName: res.nickName,
+            openId: res.openId,
+            // 可以添加其他必要信息，如openId等
+          },
+          success: function(dbRes) {
+            if (dbRes.statusCode === 200) {
+              // 假设后端返回的用户信息结构与页面data中一致
+              that.setData({
+                user: {
+                  avatar: dbRes.data.avatar || res.avatarUrl,
+                  nickname: dbRes.data.nickname || res.nickName,
+                  id: dbRes.data.id || that.generateUserId() // 如果后端没有返回ID，则生成一个
+                }
               });
-            }).catch(err => {
-              wx.showToast({
-                title: '登录失败',
-                icon: 'none'
-              });
-            });
-          } else {
-            wx.showToast({
-              title: '您已登录',
-              icon: 'success'
-            });
+            } else {
+              // 处理错误情况
+              console.error('Failed to get user info from backend:', dbRes);
+            }
+          },
+          fail: function(err) {
+            // 处理请求失败情况
+            console.error('Request failed', err);
           }
         });
       },
-      fail: err => {
-        wx.showToast({
-          title: '调用云函数失败',
-          icon: 'none'
+      fail: (err) => {
+        console.error('Failed to get user profile', err);
+      }
+    });
+  },
+  generateUserId: function() {
+    // 生成一个随机的ID
+    return Math.random().toString(36).substr(2, 9);
+  },
+  changeAvatar: function() {
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        this.setData({
+          user: {
+            avatar: res.tempFilePaths[0]
+          }
         });
       }
+    });
+  },
+  changeNickname: function() {
+    wx.getUserProfile({
+      desc: '用于更新昵称',
+      success: (res) => {
+        this.setData({
+          user: {
+            nickname: res.nickName
+          }
+        });
+      }
+    });
+  },
+  navigateToOrders: function() {
+    wx.navigateTo({
+      url: '/pages/orders/orders'
+    });
+  },
+  contactCustomerService: function() {
+    wx.makePhoneCall({
+      phoneNumber: '114' // 客服电话号码
+    });
+  },
+  submitFeedback: function() {
+    wx.navigateTo({
+      url: '/pages/feedback/feedback'
+    });
+  },
+  viewApplicationRecords: function() {
+    wx.navigateTo({
+      url: '/pages/records/records'
     });
   }
 });

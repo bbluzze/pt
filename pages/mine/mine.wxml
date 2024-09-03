@@ -1,7 +1,25 @@
-<!-- pages/index/index.wxml -->
-
 <view class="container">
-  <image class="avatar" src="{{ avatarUrl }}"></image>
-  <view class="name">{{ userName }}</view>
-  <button class="login-btn" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">微信登录</button>
+  <view class="user-info" style="position: relative; left: -95rpx; top: 183rpx; width: 495rpx; height: 102rpx; display: flex; box-sizing: border-box">
+    <image class="avatar" src="{{user.avatar}}" bindtap="changeAvatar" />
+    <view class="nickname" bindtap="changeNickname">{{user.nickname}}</view>
+    <text class="user-id">{{user.id}}</text>
+  </view>
+  <view class="menu" style="position: relative; left: 0rpx; top: 124rpx">
+    <view class="menu-item" bindtap="navigateToOrders" style="position: relative; left: -275rpx; top: 227rpx">
+      <image class="icon" src="/image/dingdan.png" /> <!-- 替换为实际图片路径 -->
+      <text>全部订单</text>
+    </view>
+    <view class="menu-item" bindtap="contactCustomerService" style="position: relative; left: -100rpx; top: 39rpx">
+      <image class="icon" src="/image/lianxikefu.png" /> <!-- 替换为实际图片路径 -->
+      <text>联系客服</text>
+    </view>
+    <view class="menu-item" bindtap="submitFeedback" style="position: relative; left: 62rpx; top: -150rpx">
+      <image class="icon" src="/image/gerenfankui.png" /> <!-- 替换为实际图片路径 -->
+      <text>我的反馈</text>
+    </view>
+    <view class="menu-item" bindtap="viewApplicationRecords" style="position: relative; left: 229rpx; top: -339rpx">
+      <image class="icon" src="/image/shenqing.png" /> <!-- 替换为实际图片路径 -->
+      <text>申请记录</text>
+    </view>
+  </view>
 </view>

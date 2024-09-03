@@ -1,28 +1,54 @@
-/* pages/index/index.wxss */
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* 根据需要调整 */
+  height: 100%;
+  padding: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .avatar {
-  width: 120rpx; /* 调整头像大小 */
-  height: 120rpx; /* 调整头像大小 */
-  border-radius: 50%; /* 确保头像显示为圆形 */
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-.name {
-  margin-top: 20rpx; /* 调整间距 */
-  font-size: 16px; /* 调整字体大小 */
+.nickname {
+  font-size: 24px;
+  font-weight: bold;
+  color: #148eff; /* 蓝色，可点击样式 */
 }
 
-.login-btn {
-  margin-top: 40rpx; /* 调整间距 */
-  background-color: #07c160; /* 调整按钮颜色 */
-  color: #fff; /* 调整文本颜色 */
-  border-radius: 4px;
-  padding: 10rpx 20rpx; /* 调整内边距 */
+.user-id {
+  margin-left: 16px;
+  color: #666;
 }
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 5px;
+}
+
