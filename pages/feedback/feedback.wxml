@@ -1,0 +1,5 @@
+<view class="container">
+  <text class="title">我的反馈</text>
+  <textarea class="feedback-input" placeholder="请在此输入文字" bindinput="bindInput"></textarea>
+  <button class="submit-button" bindtap="submitFeedback" disabled="{{isSubmitDisabled}}">提交</button>
+</view>

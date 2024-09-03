@@ -1,0 +1,20 @@
+<view class="container">
+  <input class="search-bar" placeholder="搜索" bindinput="bindSearchInput" />
+  <view class="tabs">
+    <button class="tab-button" bindtap="showAllApplications">全部申请</button>
+    <button class="tab-button" bindtap="showApprovedApplications">已通过</button>
+    <button class="tab-button" bindtap="showRejectedApplications">未通过</button>
+  </view>
+  <view class="application-list">
+    <block wx:for="{{applications}}" wx:key="id">
+      <view class="application-item">
+        <image class="session-image" src="{{item.image}}" />
+        <view class="application-details">
+          <text class="title">{{item.creatorName}}</text>
+          <text class="time">{{item.sessionTime}}</text>
+          <text class="status">{{item.status}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

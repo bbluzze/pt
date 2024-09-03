@@ -3,8 +3,11 @@ Page({
     user: {
       avatar: '/image/logo.png', // 默认头像路径
       nickname: '点击登录', // 默认昵称
-      id: '000000000' // 初始化为空，等待从后端获取
-    }
+      id: '000000000', // 初始化为空，等待从后端获取
+      role: 'user' // 初始化为普通用户
+    },
+    showManageAppointments: false, // 是否显示预约管理功能
+    showVerification: false // 是否显示核销功能
   },
   onLoad: function() {
     // 调用方法获取用户信息
@@ -24,17 +27,21 @@ Page({
             avatarUrl: res.avatarUrl,
             nickName: res.nickName,
             openId: res.openId,
-            // 可以添加其他必要信息，如openId等
+            // 可以添加其他必要信息
           },
           success: function(dbRes) {
             if (dbRes.statusCode === 200) {
               // 假设后端返回的用户信息结构与页面data中一致
+              let role = dbRes.data.role || 'user';
               that.setData({
                 user: {
                   avatar: dbRes.data.avatar || res.avatarUrl,
                   nickname: dbRes.data.nickname || res.nickName,
-                  id: dbRes.data.id || that.generateUserId() // 如果后端没有返回ID，则生成一个
-                }
+                  id: dbRes.data.id ,
+                  role: role
+                },
+                showManageAppointments: role === 'creator',
+                showVerification: role === 'admin'
               });
             } else {
               // 处理错误情况
@@ -52,10 +59,7 @@ Page({
       }
     });
   },
-  generateUserId: function() {
-    // 生成一个随机的ID
-    return Math.random().toString(36).substr(2, 9);
-  },
+  
   changeAvatar: function() {
     wx.chooseImage({
       sizeType: ['original', 'compressed'],
@@ -85,6 +89,30 @@ Page({
     wx.navigateTo({
       url: '/pages/orders/orders'
     });
+  },
+  navigateToManageAppointments: function() {
+    if (this.data.showManageAppointments) {
+      wx.navigateTo({
+        url: '/pages/manageAppointments/manageAppointments'
+      });
+    } else {
+      wx.showToast({
+        title: '您没有权限访问此页面',
+        icon: 'none'
+      });
+    }
+  },
+  navigateToVerification: function() {
+    if (this.data.showVerification) {
+      wx.navigateTo({
+        url: '/pages/verification/verification'
+      });
+    } else {
+      wx.showToast({
+        title: '您没有权限访问此页面',
+        icon: 'none'
+      });
+    }
   },
   contactCustomerService: function() {
     wx.makePhoneCall({

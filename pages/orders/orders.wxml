@@ -1,7 +1,7 @@
 <view class="container">
   <view class="order-list">
     <block wx:for="{{orders}}" wx:key="index">
-      <view class="order-item">
+      <view class="order-item" bindtap="navigateToQRCode" data-id="{{item.id}}">
         <image class="session-image" src="{{item.sessionImage}}" />
         <view class="details">
           <text class="title">{{item.title}}</text>
@@ -15,4 +15,5 @@
       <view class="divider"></view>
     </block>
   </view>
+  <button class="load-more-button" bindtap="loadMoreOrders">加载更多</button>
 </view>

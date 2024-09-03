@@ -52,3 +52,20 @@
   margin-bottom: 5px;
 }
 
+/* 仅创作者可见 */
+.manage-appointments {
+  display: none;
+}
+
+.show-manage-appointments .manage-appointments {
+  display: flex;
+}
+
+/* 仅管理员可见 */
+.verification {
+  display: none;
+}
+
+.show-verification .verification {
+  display: flex;
+}

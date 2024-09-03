@@ -17,7 +17,12 @@
     "pages/order_success/order_success",
     "pages/travel_application/travel_application",
     "pages/photography_booking/photography_booking",
-    "pages/orders/orders"
+    "pages/orders/orders",
+    "pages/feedback/feedback",
+    "pages/records/records",
+    "pages/manageAppointments/manageAppointments",
+    
+    "pages/underVerification/underVerification"
   ],
   "tabBar": {
     "list": [

@@ -1,10 +1,10 @@
 <view class="container">
-  <view class="user-info" style="position: relative; left: -95rpx; top: 183rpx; width: 495rpx; height: 102rpx; display: flex; box-sizing: border-box">
-    <image class="avatar" src="{{user.avatar}}" bindtap="changeAvatar" />
-    <view class="nickname" bindtap="changeNickname">{{user.nickname}}</view>
-    <text class="user-id">{{user.id}}</text>
+  <view class="user-info" style="position: relative; left: -50rpx; top: 183rpx; width: 495rpx; height: 102rpx; display: flex; box-sizing: border-box">
+    <image style="width: 110rpx; height: 100rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" class="avatar" src="{{user.avatar}}" bindtap="changeAvatar" />
+    <view class="nickname" bindtap="changeNickname" style="width: 385rpx; height: 100rpx; display: block; box-sizing: border-box; position: fixed; left: 212rpx; top: 224rpx">{{user.nickname}}</view>
+    <text class="user-id" style="position: relative; left: 197rpx; top: 0rpx">{{user.id}}</text>
   </view>
-  <view class="menu" style="position: relative; left: 0rpx; top: 124rpx">
+  <view class="menu" style="position: relative; left: 24rpx; top: 145rpx; width: 156rpx; height: 102rpx; display: flex; box-sizing: content-box">
     <view class="menu-item" bindtap="navigateToOrders" style="position: relative; left: -275rpx; top: 227rpx">
       <image class="icon" src="/image/dingdan.png" /> <!-- 替换为实际图片路径 -->
       <text>全部订单</text>
@@ -20,6 +20,16 @@
     <view class="menu-item" bindtap="viewApplicationRecords" style="position: relative; left: 229rpx; top: -339rpx">
       <image class="icon" src="/image/shenqing.png" /> <!-- 替换为实际图片路径 -->
       <text>申请记录</text>
+    </view>
+    <!-- 仅创作者可见 -->
+    <view wx:if="{{showManageAppointments}}" class="menu-item" bindtap="navigateToManageAppointments" style="position: relative; left: 0rpx; top: -500rpx">
+      <image class="icon" src="/image/logo.png" /> <!-- 替换为实际图片路径 -->
+      <text>预约管理</text>
+    </view>
+    <!-- 仅管理员可见 -->
+    <view wx:if="{{showVerification}}" class="menu-item" bindtap="navigateToVerification" style="position: relative; left: 0rpx; top: -500rpx">
+      <image class="icon" src="/image/verification.png" /> <!-- 替换为实际图片路径 -->
+      <text>核销</text>
     </view>
   </view>
 </view>

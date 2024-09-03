@@ -1,0 +1,4 @@
+<view class="container">
+  <image class="qrcode" src="{{qrcodeUrl}}" mode="aspectFit" />
+  <button class="refund-button" bindtap="navigateToRefund">退款</button>
+</view>

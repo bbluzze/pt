@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="tabs">
+    <button class="tab-button" bindtap="showApprovedApplications">已通过</button>
+    <button class="tab-button" bindtap="showRejectedApplications">未通过</button>
+  </view>
+  <view class="application-list">
+    <block wx:for="{{filteredApplications}}" wx:key="id">
+      <view class="application-item">
+        <text class="cn">{{item.cn}}</text>
+        <text class="session">{{item.session}}</text>
+        <text class="time">{{item.time}}</text>
+        <text class="status" style="{{item.statusStyle}}">{{item.status}}</text>
+        <button class="approve-button" bindtap="toggleApproval" data-id="{{item.id}}" style="{{item.buttonStyle}}">通过</button>
+      </view>
+    </block>
+  </view>
+  <button class="refresh-button" bindtap="refreshPage" style="position: relative; left: 279rpx; top: 1070rpx">刷新</button>
+</view>

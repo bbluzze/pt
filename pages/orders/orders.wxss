@@ -1,9 +1,12 @@
 .container {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 
 .order-list {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .order-item {
@@ -13,38 +16,39 @@
 }
 
 .session-image {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 5px;
-  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
 }
 
 .details {
-  flex: 1;
-}
-
-.title {
-  font-size: 16px;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
 
 .info-row {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
 }
 
-.location, .price {
-  color: #666;
-}
-
-.status {
-  margin-top: 5px;
-  color: #ff0000;
+.title, .location, .price, .status {
+  margin-bottom: 10px;
 }
 
 .divider {
-  height: 1rpx;
-  background-color: #e5e5e5;
-  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+.load-more-button {
+  width: 100px;
+  height: 40px;
+  margin: 20px auto;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
 }

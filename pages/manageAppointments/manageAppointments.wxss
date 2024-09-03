@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  width: 100px;
+  height: 40px;
+}
+
+.application-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.application-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cn, .session, .time, .status {
+  margin-right: 20px;
+}
+
+.approve-button {
+  width: 60px;
+  height: 30px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  background-color: gray; /* 默认背景颜色 */
+}
+
+.refresh-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #007aff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
