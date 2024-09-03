@@ -16,7 +16,8 @@
     "pages/order_confirm/order_confirm",
     "pages/order_success/order_success",
     "pages/travel_application/travel_application",
-    "pages/photography_booking/photography_booking"
+    "pages/photography_booking/photography_booking",
+    "pages/orders/orders"
   ],
   "tabBar": {
     "list": [
@@ -26,7 +27,7 @@
       },
       {
         "pagePath": "pages/ticket/ticket",
-        "text": "订票"
+        "text": "购票"
       },
       {
         "pagePath": "pages/community/community",
